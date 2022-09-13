@@ -47,3 +47,12 @@ The page has to show the time that the request was received and how many entries
 
 **Solution:**
 The solution is demonstrated in the application located in the root directory.
+
+## Exercise 3.3: Phonebook backend step3
+**Task:**
+Implement the functionality for displaying the information for a single phonebook entry. The url for getting the data for a person with the id 5 should be http://localhost:3001/api/persons/5
+
+If an entry for the given id is not found, the server has to respond with the appropriate status code.
+
+**Solution:**
+The solution is demonstrated in the application located in the root directory.
