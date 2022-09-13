@@ -28,6 +28,14 @@ app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>')
 })
 
+app.get('/info', (request, response) => {
+    console.log("/info received")
+    // I guess the time could be red from the params, going with the current solution to quickly move on
+    response.send(
+        `<p>Phonebook has info for ${persons.length} people</p><p>${new Date().toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})</p>`
+    )
+})
+
 app.get('/api/persons', (request, response) => {
     response.json(persons)
 })

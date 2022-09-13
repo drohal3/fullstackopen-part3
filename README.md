@@ -37,6 +37,13 @@ The application must be started with the command npm start.
 The application must also offer an npm run dev command that will run the application and restart the server whenever changes are made and saved to a file in the source code.
 
 **Solution:**
-Solution: The solution is demonstrated in the application located in the root directory.
+The solution is demonstrated in the application located in the root directory.
 
+## Exercise 3.2: Phonebook backend step2
+**Task:**
+Implement a page at the address http://localhost:3001/info that looks roughly like this:
 
+The page has to show the time that the request was received and how many entries are in the phonebook at the time of processing the request.
+
+**Solution:**
+The solution is demonstrated in the application located in the root directory.
