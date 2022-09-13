@@ -66,7 +66,26 @@ Test that your functionality works with either Postman or the Visual Studio Code
 **Solution:**
 The solution is demonstrated in the application located in the root directory.
 
-## Exercise Expand the backend so that new phonebook entries can be added by making HTTP POST requests to the address http://localhost:3001/api/persons.
+## 3.5: Phonebook backend step5
 **Task:**
+Expand the backend so that new phonebook entries can be added by making HTTP POST requests to the address http://localhost:3001/api/persons.
+
 Generate a new id for the phonebook entry with the Math.random function. Use a big enough range for your random values so that the likelihood of creating duplicate ids is small.
 
+**Solution:**
+The solution is demonstrated in the application located in the root directory.
+
+## Exercise 3.6: Phonebook backend step6
+**Task:**
+Implement error handling for creating new entries. The request is not allowed to succeed, if:
+
+- The name or number is missing
+- The name already exists in the phonebook
+
+Respond to requests like these with the appropriate status code, and also send back information that explains the reason for the error, e.g.:
+```
+{ error: 'name must be unique' }
+```
+
+**Solution:**
+The solution is demonstrated in the application located in the root directory.

@@ -65,8 +65,23 @@ app.post('/api/persons', (request, response) => {
     const person = request.body
     console.log(person)
     let id = Math.floor(Math.random() * 9007199254740991);
-    let name = person.name
-    let number = person.number
+    let name = ("name" in person) ? person.name : false
+    let number = ("number" in person) ? person.number : false
+
+    if (name === false) {
+        response.status(400).json({error: "name is required"})
+        return
+    }
+
+    if (number === false) {
+        response.status(400).json({error: "number is required"})
+        return
+    }
+
+    if (name !== false && persons.find(person => person.name === name)) {
+        response.status(400).json({error: "name must be unique"})
+        return
+    }
     let personToAdd = {id,name,number}
     persons = persons.concat(personToAdd)
     console.log(personToAdd)
