@@ -56,3 +56,12 @@ If an entry for the given id is not found, the server has to respond with the ap
 
 **Solution:**
 The solution is demonstrated in the application located in the root directory.
+
+## Exercise 3.4: Phonebook backend step4
+**Task:**
+Implement functionality that makes it possible to delete a single phonebook entry by making an HTTP DELETE request to the unique URL of that phonebook entry.
+
+Test that your functionality works with either Postman or the Visual Studio Code REST client.
+
+**Solution:**
+The solution is demonstrated in the application located in the root directory.
