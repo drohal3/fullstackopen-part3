@@ -117,3 +117,12 @@ This exercise can be completed in a few different ways. One of the possible solu
 
 **Solution:**
 The solution is demonstrated in the application located in the root directory.
+
+## Exercise 3.9 phonebook backend step9
+**Task:**
+Make the backend work with the phonebook frontend from the exercises of the previous part. Do not implement the functionality for making changes to the phone numbers yet, that will be implemented in exercise 3.17.
+
+You will probably have to do some small changes to the frontend, at least to the URLs for the backend. Remember to keep the developer console open in your browser. If some HTTP requests fail, you should check from the Network-tab what is going on. Keep an eye on the backend's console as well. If you did not do the previous exercise, it is worth it to print the request data or request.body to the console in the event handler responsible for POST requests.
+
+**Solution:**
+The only change needed in frontend (taken from [part2 phonebook](https://github.com/drohal3/fullstackopen-part2/tree/main/phonebook)) was changing the base url. In backend, there was the need for taking cors middleware into use.
