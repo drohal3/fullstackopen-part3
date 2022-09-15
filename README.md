@@ -126,3 +126,19 @@ You will probably have to do some small changes to the frontend, at least to the
 
 **Solution:**
 The only change needed in frontend (taken from [part2 phonebook](https://github.com/drohal3/fullstackopen-part2/tree/main/phonebook)) was changing the base url. In backend, there was the need for taking cors middleware into use.
+
+## 3.10 phonebook backend step10
+**Task:**
+Deploy the backend to the internet, for example to Heroku.
+
+NB the command heroku works on the department's computers and the freshman laptops. If for some reason you cannot install Heroku to your computer, you can use the command npx heroku.
+
+Test the deployed backend with a browser and Postman or VS Code REST client to ensure it works.
+
+PRO TIP: When you deploy your application to Heroku, it is worth it to at least in the beginning keep an eye on the logs of the heroku application AT ALL TIMES with the command heroku logs -t.
+
+Create a README.md at the root of your repository, and add a link to your online application to it.
+
+**Solution:**
+Backend was deployed to https://fly.io/ following https://fly.io/docs/hands-on/install-flyctl/ instructions.
+URL with persons data: https://phonebook-bcknd3.fly.dev/api/persons 
