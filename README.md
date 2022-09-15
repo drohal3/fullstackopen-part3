@@ -142,3 +142,26 @@ Create a README.md at the root of your repository, and add a link to your online
 **Solution:**
 Backend was deployed to https://fly.io/ following https://fly.io/docs/hands-on/install-flyctl/ instructions.
 URL with persons data: https://phonebook-bcknd3.fly.dev/api/persons 
+
+## Exercise 3.11 phonebook full stack
+**Task:**
+Generate a production build of your frontend, and add it to the internet application using the method introduced in this part.
+
+NB Make sure the directory build is not gitignored
+
+Also make sure that the frontend still works locally (in development mode when started with command npm start).
+
+**Solution:**
+Frontend used from [part2 phonebook](https://github.com/drohal3/fullstackopen-part2/tree/main/phonebook).
+Changed base urld in persons.js service file:
+```
+const baseUrl = '/api/persons'
+```
+and added proxy to package.json
+```
+"proxy": "http://localhost:3001"
+```
+Updating existing persons not yet implemented.
+App URL: https://phonebook-bcknd3.fly.dev/ 
+
+

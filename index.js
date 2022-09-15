@@ -7,6 +7,7 @@ app.use(cors())
 app.use(express.json())
 morgan.token('data', function (req, res) { return JSON.stringify(req.body) })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
+app.use(express.static('build')) // middleware to check build directory first (for static content)
 
 let persons = [
     {
@@ -90,7 +91,7 @@ app.post('/api/persons', (request, response) => {
     let personToAdd = {id,name,number}
     persons = persons.concat(personToAdd)
     console.log(personToAdd)
-    response.json(person)
+    response.json(personToAdd)
 })
 
 const PORT = process.env.PORT || 3001 // fallbacks to 3001 if env variable not provided
