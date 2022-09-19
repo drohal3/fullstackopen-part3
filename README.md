@@ -221,3 +221,21 @@ NB: If you define a model with the name Person, mongoose will automatically name
 
 **Solution:**
 The solution is implemented in mongo.js file located in the root directory.
+
+Used service for the mongoDB: https://www.mongodb.com/atlas/database
+
+## Exercise 3.13: Phonebook database, step1
+**Task:**
+Change the fetching of all phonebook entries so that the data is fetched from the database.
+
+Verify that the frontend works after the changes have been made.
+
+In the following exercises, write all Mongoose-specific code into its own module, just like we did in the chapter [Database configuration into its own module](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#database-configuration-into-its-own-module).
+
+**Solution:**
+fly.io chosen as a service to run the app.
+
+.env variables need to be configured as following:
+```
+ fly secrets set MONGODB_URI='<the_config_value>'
+```
