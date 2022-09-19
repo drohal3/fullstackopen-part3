@@ -275,3 +275,10 @@ Verify that the frontend works after making your changes.
 
 **Solution:**
 Implemented together with previous exercises.
+
+## Exercise 3.18*: Phonebook database step6
+**Task:**
+Also update the handling of the api/persons/:id and info routes to use the database, and verify that they work directly with the browser, Postman, or VS Code REST client.
+
+**Solution:**
+Modified /info request.

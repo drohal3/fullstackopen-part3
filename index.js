@@ -15,13 +15,13 @@ app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>')
 })
 
-app.get('/info', (request, response) => {
-    // TODO:
-    console.log("/info received")
-    // I guess the time could be red from the params, going with the current solution to quickly move on
-    response.send(
-        `<p>Phonebook has info for ${persons.length} people</p><p>${new Date().toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})</p>`
-    )
+app.get('/info', (request, response, next) => {
+    Persons.count({}).then(count => {
+        // I guess the time could be red from the params, going with the current solution to quickly move on
+        response.send(
+            `<p>Phonebook has info for ${count} people</p><p>${new Date().toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})</p>`
+        )
+    }).catch(error => next(error))
 })
 
 app.get('/api/persons', (request, response, next) => {
