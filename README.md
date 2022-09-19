@@ -248,3 +248,13 @@ At this point, you can choose to simply allow users to create all phonebook entr
 
 **Solution:**
 Implemented together with the previous exercise, created new build for frontend and deployed to the server.
+
+## Exercise 3.15: Phonebook database, step3
+**Task:**
+Change the backend so that deleting phonebook entries is reflected in the database.
+
+Verify that the frontend still works after making the changes.
+
+**Solution:**
+Implemented together with the previous exercises
+
