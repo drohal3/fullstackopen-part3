@@ -24,25 +24,29 @@ app.get('/info', (request, response) => {
     )
 })
 
-app.get('/api/persons', (request, response) => {
+app.get('/api/persons', (request, response, next) => {
     Persons.find({}).then(persons => {
         response.json(persons)
-    })
+    }).catch(error => next(error))
 })
 
-app.get('/api/persons/:id', (request, response) => {
+app.get('/api/persons/:id', (request, response, next) => {
     Persons.findById(request.params.id).then(person => {
-        response.json(person)
-    })
+        if (person) {
+            response.json(person)
+        } else {
+            response.status(404).end()
+        }
+    }).catch(error => next(error))
 })
 
-app.delete('/api/persons/:id', (request, response) => {
+app.delete('/api/persons/:id', (request, response, next) => {
     Persons.findByIdAndDelete(request.params.id).then(() => {
         response.status(204).end()
-    })
+    }).catch(error => next(error))
 })
 
-app.post('/api/persons', (request, response) => {
+app.post('/api/persons', (request, response, next) => {
     const body = request.body
 
     let name = (body.name !== undefined) ? body.name : false
@@ -69,12 +73,10 @@ app.post('/api/persons', (request, response) => {
 
     person.save().then(savedPerson => {
         response.json(savedPerson)
-    }).catch(error => {
-        console.log("some error")
-    })
+    }).catch(error => next(error))
 })
 
-app.put('/api/persons/:id', (request, response) => {
+app.put('/api/persons/:id', (request, response, next) => {
     const body = request.body
 
     const person = {
@@ -86,10 +88,29 @@ app.put('/api/persons/:id', (request, response) => {
         .then(updatedPerson => {
             response.json(updatedPerson.toJSON())
         })
-        .catch(error => {
-
-        })
+        .catch(error => next(error))
 })
+
+const unknownEndpoint = (request, response) => {
+    response.status(404).send({ error: 'unknown endpoint' })
+}
+
+// handler of requests with unknown endpoint
+app.use(unknownEndpoint)
+
+
+const errorHandler = (error, request, response, next) => {
+    console.error(error.message)
+
+    if (error.name === 'CastError') {
+        return response.status(400).send({ error: 'malformatted id' })
+    }
+
+    next(error)
+}
+
+// this has to be the last loaded middleware.
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 3001 // fallbacks to 3001 if env variable not provided
 app.listen(PORT, () => {

@@ -258,3 +258,11 @@ Verify that the frontend still works after making the changes.
 **Solution:**
 Implemented together with the previous exercises
 
+## 3.16: Phonebook database, step4
+**Task:**
+Move the error handling of the application to a new error handler middleware.
+
+**Solution:**
+Implemented according to the instructions.
+
+
