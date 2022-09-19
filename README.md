@@ -258,11 +258,20 @@ Verify that the frontend still works after making the changes.
 **Solution:**
 Implemented together with the previous exercises
 
-## 3.16: Phonebook database, step4
+## Exercise 3.16: Phonebook database, step4
 **Task:**
 Move the error handling of the application to a new error handler middleware.
 
 **Solution:**
 Implemented according to the instructions.
+ 
+## Exercise 3.17*: Phonebook database, step5
+**Task:**
+If the user tries to create a new phonebook entry for a person whose name is already in the phonebook, the frontend will try to update the phone number of the existing entry by making an HTTP PUT request to the entry's unique URL.
 
+Modify the backend to support this request.
 
+Verify that the frontend works after making your changes. 
+
+**Solution:**
+Implemented together with previous exercises.
