@@ -239,3 +239,12 @@ fly.io chosen as a service to run the app.
 ```
  fly secrets set MONGODB_URI='<the_config_value>'
 ```
+
+## Exercise 3.14: Phonebook database, step2
+**Task:**
+Change the backend so that new numbers are saved to the database. Verify that your frontend still works after the changes.
+
+At this point, you can choose to simply allow users to create all phonebook entries. At this stage, the phonebook can have multiple entries for a person with the same name.
+
+**Solution:**
+Implemented together with the previous exercise, created new build for frontend and deployed to the server.
