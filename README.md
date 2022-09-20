@@ -327,4 +327,4 @@ Generate a new "full stack" version of the application by creating a new product
 Push the latest version to Heroku and verify that everything works there as well.
 
 **Solution:**
-Created a new build and deployed to fly.io.
+Created a new build and deployed to fly.io. Tested if everything worked.
