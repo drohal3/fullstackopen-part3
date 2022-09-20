@@ -328,3 +328,10 @@ Push the latest version to Heroku and verify that everything works there as well
 
 **Solution:**
 Created a new build and deployed to fly.io. Tested if everything worked.
+
+## Exercise 3.22: Lint configuration
+**Task:**
+Add ESlint to your application and fix all the warnings.
+
+**Solution:**
+Fixed code style
