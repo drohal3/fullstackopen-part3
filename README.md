@@ -318,3 +318,13 @@ Use a [Custom validator](https://mongoosejs.com/docs/validation.html#custom-vali
 If an HTTP POST request tries to add a name that is already in the phonebook, the server must respond with an appropriate status code and error message.
 
 ***Solution:***
+Added validation in persons.js backend file.
+
+## Exercise 3.21 Deploying the database backend to production
+***Task:***
+Generate a new "full stack" version of the application by creating a new production build of the frontend, and copy it to the backend repository. Verify that everything works locally by using the entire application from the address http://localhost:3001/.
+
+Push the latest version to Heroku and verify that everything works there as well.
+
+**Solution:**
+Created a new build and deployed to fly.io.
