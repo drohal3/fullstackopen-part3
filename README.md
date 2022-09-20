@@ -282,3 +282,23 @@ Also update the handling of the api/persons/:id and info routes to use the datab
 
 **Solution:**
 Modified /info request.
+
+## Exercise 3.19*: Phonebook database, step7
+**Task:**
+Expand the validation so that the name stored in the database has to be at least three characters long.
+
+Expand the frontend so that it displays some form of error message when a validation error occurs. Error handling can be implemented by adding a catch block as shown below:
+
+personService
+.create({ ... })
+.then(createdPerson => {
+// ...
+})
+.catch(error => {
+// this is the way to access the error message
+console.log(error.response.data.error)
+})
+You can display the default error message returned by Mongoose, even though they are not as readable as they could be
+
+**Solution:**
+Added validation rules also for the number to test validation on update.
