@@ -288,7 +288,7 @@ Modified /info request.
 Expand the validation so that the name stored in the database has to be at least three characters long.
 
 Expand the frontend so that it displays some form of error message when a validation error occurs. Error handling can be implemented by adding a catch block as shown below:
-
+```
 personService
 .create({ ... })
 .then(createdPerson => {
@@ -298,7 +298,23 @@ personService
 // this is the way to access the error message
 console.log(error.response.data.error)
 })
+```
 You can display the default error message returned by Mongoose, even though they are not as readable as they could be
 
 **Solution:**
 Added validation rules also for the number to test validation on update.
+
+## Exercise 3.20*: Phonebook database, step8
+***Task:***
+Add validation to your phonebook application, that will make sure that phone numbers are of the correct form. A phone number must
+
+has length of 8 or more
+if formed of two parts that are separated by -, the first part has two or three numbers and the second part also consists of numbers
+
+eg. 09-1234556 and 040-22334455 are valid phone numbers
+eg. 1234556, 1-22334455 and 10-22-334455 are invalid
+Use a [Custom validator](https://mongoosejs.com/docs/validation.html#custom-validators) to implement the second part of the validation.
+
+If an HTTP POST request tries to add a name that is already in the phonebook, the server must respond with an appropriate status code and error message.
+
+***Solution:***
